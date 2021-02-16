@@ -67,4 +67,77 @@ export default dataBook = [
       {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
     ],
   },
+
+
+  {
+    name: "Jiraiya",
+    id: "3",
+    Village: "Hidden Leef",
+    color: "#827717",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "Mount Myoboku",
+    Afiliation_Icon: require("../assets/img/anbu.png"),
+    Ninja_Level: "S rank",
+    Gender: "Masculino",
+    clan: " Unkwon",
+    clan_Icon: require("../assets/img/uchiha_logo.png"),
+    img: require("../assets/img/jiray.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "Sharingan",
+        icon: require("../assets/img/sharinga.png"),
+      },
+      {
+        id: "2",
+        name: "Mangekyō Sharingan",
+        icon: require("../assets/img/shisui_mangeko.png"),
+      },
+    ],
+    nature_Transformations: [
+      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
+      {
+        id: "2", name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
+      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+    ],
+  },
+
+  {
+    name: "Darui",
+    id: "4",
+    Village: "Hidden Leef",
+    color: "#039be5",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "Mount Myoboku",
+    Afiliation_Icon: require("../assets/img/anbu.png"),
+    Ninja_Level: "S rank",
+    Gender: "Masculino",
+    clan: " Unkwon",
+    clan_Icon: require("../assets/img/uchiha_logo.png"),
+    img: require("../assets/img/darui.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "Sharingan",
+        icon: require("../assets/img/sharinga.png"),
+      },
+      {
+        id: "2",
+        name: "Mangekyō Sharingan",
+        icon: require("../assets/img/shisui_mangeko.png"),
+      },
+    ],
+    nature_Transformations: [
+      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
+      {
+        id: "2", name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
+      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+    ],
+  },
 ];
