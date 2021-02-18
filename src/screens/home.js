@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Dimensions,
@@ -6,24 +6,51 @@ import {
   View,
   FlatList,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   Image,
   SafeAreaView,
   Platform,
   TextInput,
-  ScrollView,
+  Animated,
 } from "react-native";
+import { SharedElement } from "react-native-shared-element";
 import dataBook from "../../db/data";
-import { Avatar } from "react-native-elements";
+import Ionicons from "react-native-vector-icons/Ionicons";
+
+import Star from "../components/star";
 const { width, height } = Dimensions.get("screen");
 const ITEM_HEIGHT = height * 0.3;
+
 const Home = ({ navigation }) => {
+  let stars = [1, 2, 3, 4, 5];
+  const [rating, setRating] = useState(3);
   return (
     <SafeAreaView style={styles.androidSafearea}>
-      <View style={{ alignItems: "flex-start", marginLeft: 10, marginTop: 25 }}>
+      <View
+        style={{
+          alignItems: "flex-start",
+          marginLeft: 10,
+          marginTop: 25,
+          flexDirection: "row",
+        }}
+      >
         <TextInput
-          style={{ borderBottomWidth: 1, width: width - 100 }}
+          style={{
+            borderBottomWidth: 1,
+            width: width - 80,
+            marginRight: 10,
+            borderBottomColor: "#00796b",
+          }}
           placeholder="enter a name"
         />
+        <TouchableOpacity>
+          <Ionicons
+            name="search"
+            size={30}
+            style={{ marginTop: -10 }}
+            color="grey"
+          />
+        </TouchableOpacity>
       </View>
       <View>
         <Text
@@ -34,6 +61,7 @@ const Home = ({ navigation }) => {
             letterSpacing: 1.2,
             opacity: 0.8,
             marginLeft: 5,
+            color: "#880e4f",
           }}
         >
           Bing Book
@@ -46,8 +74,7 @@ const Home = ({ navigation }) => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity
-              onPress={() => navigation.navigate("CharacterDetails", { item })}
+            <View
               style={{
                 marginTop: 40,
                 height: ITEM_HEIGHT,
@@ -55,49 +82,102 @@ const Home = ({ navigation }) => {
               }}
             >
               <View style={{ flex: 1, padding: 25 }}>
-                <View
-                  style={[
-                    StyleSheet.absoluteFillObject,
-                    {
-                      backgroundColor: item.color ? item.color : "#f9a825",
-                      borderRadius: 16,
-                      padding: 10,
-                    },
-                  ]}
+                <SharedElement
+                  id={`item.${item.key}.bg`}
+                  style={[StyleSheet.absoluteFillObject]}
                 >
-                  <Text style={styles.name}>Name: {item.name}</Text>
-                  <View style={{ flexDirection: "row", padding: 10 }}>
-                    <Text style={styles.Village}>Village: {item.Village} </Text>
-                    <Image
-                      source={item.Village_Icon}
-                      style={{ width: 15, height: 15 }}
-                    />
-                  </View>
+                  <View
+                    style={[
+                      StyleSheet.absoluteFillObject,
+                      {
+                        backgroundColor: item.color ? item.color : "#f9a825",
+                        borderRadius: 16,
+                        padding: 10,
+                      },
+                    ]}
+                  >
+                    <SharedElement id={`item.${item.key}.name`}>
+                      <Text style={styles.name}>{item.name}</Text>
+                    </SharedElement>
+                    <Text style={styles.Village}>{item.description} </Text>
+                    <View style={{ flexDirection: "row", marginTop: 30 }}>
+                      {stars.map((i) => {
+                        return (
+                          <TouchableWithoutFeedback key={i}>
+                            <Animated.View>
+                              <Star filled={i <= rating ? true : false} />
+                            </Animated.View>
+                          </TouchableWithoutFeedback>
+                        );
+                      })}
+                    </View>
 
-                  <Image rounded source={item.img} style={styles.image} />
-                </View>
+                    <View>
+                      <TouchableOpacity
+                        onPress={() =>
+                          navigation.navigate("CharacterDetails", { item })
+                        }
+                        style={{
+                          position: "absolute",
+                          backgroundColor: "#212121",
+                          borderRadius: 18,
+                          width: 100,
+                          height: 40,
+                          justifyContent: "center",
+                          alignItems: "center",
+                          bottom: -60,
+                        }}
+                      >
+                        <Text
+                          style={{
+                            color: "white",
+                            shadowColor: "#000",
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.8,
+                            shadowRadius: 2,
+                            elevation: 1,
+                          }}
+                        >
+                          more info...
+                        </Text>
+                      </TouchableOpacity>
+                    </View>
+                    <SharedElement
+                      id={`item.${item.key}.image`}
+                      style={styles.image}
+                    >
+                      <Image rounded source={item.img} style={styles.image} />
+                    </SharedElement>
+                  </View>
+                </SharedElement>
               </View>
-            </TouchableOpacity>
+            </View>
           );
         }}
       />
-   
-      {/**    <View style={styles.bg} /> */}
+      <SharedElement id="general.bg">
+        <View style={styles.bg} />
+      </SharedElement>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   name: {
-    fontWeight: "700",
-    fontSize: 18,
+    fontSize: 40,
     color: "white",
     letterSpacing: 1.2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.6,
+    shadowRadius: 2,
+    elevation: 1,
+    textTransform: "uppercase",
   },
   Village: {
     color: "white",
-    fontSize: 11,
-    opacity: 0.7,
+    fontSize: 18,
+    opacity: 0.6,
   },
   androidSafearea: {
     flex: 1,
@@ -106,11 +186,11 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 150,
-    height: 240,
+    width: width / 2 - 25,
+    height: height / 2 - 114,
     position: "absolute",
     bottom: 0,
-    right: -20,
+    right: 5,
     resizeMode: "contain",
   },
   bg: {
