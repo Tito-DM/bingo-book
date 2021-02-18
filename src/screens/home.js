@@ -13,7 +13,7 @@ import {
   TextInput,
   Animated,
 } from "react-native";
-import { SharedElement } from "react-native-shared-element";
+import { SharedElement } from "react-navigation-shared-element";
 import dataBook from "../../db/data";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -52,6 +52,7 @@ const Home = ({ navigation }) => {
           />
         </TouchableOpacity>
       </View>
+
       <View>
         <Text
           style={{
@@ -83,7 +84,7 @@ const Home = ({ navigation }) => {
             >
               <View style={{ flex: 1, padding: 25 }}>
                 <SharedElement
-                  id={`item.${item.key}.bg`}
+                  id={`item.${item.id}.bg`}
                   style={[StyleSheet.absoluteFillObject]}
                 >
                   <View
@@ -95,60 +96,57 @@ const Home = ({ navigation }) => {
                         padding: 10,
                       },
                     ]}
-                  >
-                    <SharedElement id={`item.${item.key}.name`}>
-                      <Text style={styles.name}>{item.name}</Text>
-                    </SharedElement>
-                    <Text style={styles.Village}>{item.description} </Text>
-                    <View style={{ flexDirection: "row", marginTop: 30 }}>
-                      {stars.map((i) => {
-                        return (
-                          <TouchableWithoutFeedback key={i}>
-                            <Animated.View>
-                              <Star filled={i <= rating ? true : false} />
-                            </Animated.View>
-                          </TouchableWithoutFeedback>
-                        );
-                      })}
-                    </View>
+                  />
+                </SharedElement>
 
-                    <View>
-                      <TouchableOpacity
-                        onPress={() =>
-                          navigation.navigate("CharacterDetails", { item })
-                        }
-                        style={{
-                          position: "absolute",
-                          backgroundColor: "#212121",
-                          borderRadius: 18,
-                          width: 100,
-                          height: 40,
-                          justifyContent: "center",
-                          alignItems: "center",
-                          bottom: -60,
-                        }}
-                      >
-                        <Text
-                          style={{
-                            color: "white",
-                            shadowColor: "#000",
-                            shadowOffset: { width: 0, height: 2 },
-                            shadowOpacity: 0.8,
-                            shadowRadius: 2,
-                            elevation: 1,
-                          }}
-                        >
-                          more info...
-                        </Text>
-                      </TouchableOpacity>
-                    </View>
-                    <SharedElement
-                      id={`item.${item.key}.image`}
-                      style={styles.image}
+                <Text style={styles.name}>{item.name}</Text>
+
+                <Text style={styles.Village}>{item.description} </Text>
+                <View style={{ flexDirection: "row", marginTop: 10 }}>
+                  {stars.map((i) => {
+                    return (
+                      <TouchableWithoutFeedback key={i}>
+                        <Animated.View>
+                          <Star filled={i <= rating ? true : false} />
+                        </Animated.View>
+                      </TouchableWithoutFeedback>
+                    );
+                  })}
+                </View>
+
+                <View>
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate("CharacterDetails", { item })
+                    }
+                    style={{
+                      position: "absolute",
+                      backgroundColor: "#212121",
+                      borderRadius: 18,
+                      width: 100,
+                      height: 40,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      bottom: -65,
+                      shadowColor: "#263238",
+                      shadowOffset: { width: 0, height: 2 },
+                      shadowOpacity: 0.8,
+                      shadowRadius: 2,
+                      elevation: 1,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color: "white",
+                   
+                      }}
                     >
-                      <Image rounded source={item.img} style={styles.image} />
-                    </SharedElement>
-                  </View>
+                      more info...
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+                <SharedElement id={`item.${item.id}.image`} style={styles.image}>
+                  <Image rounded source={item.img} style={styles.image} />
                 </SharedElement>
               </View>
             </View>
@@ -166,17 +164,16 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 40,
     color: "white",
-    letterSpacing: 1.2,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.6,
     shadowRadius: 2,
     elevation: 1,
-    textTransform: "uppercase",
+    textTransform: "capitalize"
   },
   Village: {
     color: "white",
-    fontSize: 18,
+    fontSize: 14,
     opacity: 0.6,
   },
   androidSafearea: {
@@ -197,7 +194,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     width,
     height,
-    backgroundColor: "red",
+    backgroundColor: "white",
     transform: [{ translateY: height }],
     borderRadius: 32,
   },
