@@ -1,6 +1,6 @@
 export default dataBook = [
   {
-    name: "Pain",
+    name: "Nagato",
     id: "1",
     Village: "Hidden Rain",
     description: "Six Path of Pain",
@@ -10,9 +10,9 @@ export default dataBook = [
     Ninja_Level: "S rank",
     Gender: "Masculino",
     clan: "Uzumaki",
-    color: "#ef5350",
+    color: "#800000",
     clan_Icon: require("../assets/img/uzumaki_logo.png"),
-    img: require("../assets/img/pain-3.png"),
+    img: require("../assets/img/nagato.png"),
     Kekkei_Genkais: [
       {
         id: "1",
@@ -21,15 +21,36 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2",name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Earth Release", icon: require("../assets/img/earth.png") },
-      { id: "4", name: "Water Release", icon: require("../assets/img/water.png") },
-      {  id: "5",name: "Wind Release", icon: require("../assets/img/wind.png") },
-      { id: "6", name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Earth Release",
+        icon: require("../assets/img/earth.png"),
+      },
+      {
+        id: "4",
+        name: "Water Release",
+        icon: require("../assets/img/water.png"),
+      },
+      {
+        id: "5",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "6",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -60,16 +81,28 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
-
 
   {
     name: "Jiraiya",
@@ -98,50 +131,67 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
   {
     name: "Darui",
     id: "4",
-    Village: "Hidden Leef",
+    Village: "Hidden Cloud",
     description: "The Black Lightning Panter",
     color: "#01579b",
-    Village_Icon: require("../assets/img/leef_village_logo.png"),
-    Afiliation: "Mount Myoboku",
-    Afiliation_Icon: require("../assets/img/anbu.png"),
+    Village_Icon: require("../assets/img/hidden_cloud_village_logo.png"),
+    Afiliation: "Black Lightning",
+    Afiliation_Icon: require("../assets/img/raikage_tato.png"),
     Ninja_Level: "S rank",
+    Ninja_Level_Icon: require("../assets/img/raikage.png"),
     Gender: "Masculino",
     clan: " Unkwon",
-    clan_Icon: require("../assets/img/uchiha_logo.png"),
+    clan_Icon: require("../assets/img/unknown.png"),
     img: require("../assets/img/darui.png"),
     Kekkei_Genkais: [
       {
         id: "1",
-        name: "Sharingan",
-        icon: require("../assets/img/sharinga.png"),
-      },
-      {
-        id: "2",
-        name: "Mangekyō Sharingan",
-        icon: require("../assets/img/shisui_mangeko.png"),
+        name: "Storm Release",
+        icon: require("../assets/img/kekkei_genkai.png"),
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Water Release",
+        icon: require("../assets/img/water.png"),
+      },
     ],
   },
   {
@@ -150,34 +200,48 @@ export default dataBook = [
     Village: "Hidden Mist",
     description: "Melt Kiss",
     color: "#f48fb1",
-    Village_Icon: require("../assets/img/leef_village_logo.png"),
-    Afiliation: "Mizukage",
-    Afiliation_Icon: require("../assets/img/akatsuki.png"),
+    Village_Icon: require("../assets/img/hidden_mist_logo.png"),
+    Afiliation: "Shinobi Alliance",
+    Afiliation_Icon: require("../assets/img/shinobi_alience_logo.png"),
     Ninja_Level: "Kage",
+    Ninja_Level_Icon: require("../assets/img/mizukage.png"),
     Gender: "Female",
-    clan: " Unkwon",
-    clan_Icon: require("../assets/img/uchiha_logo.png"),
+    clan: " Unknown",
+    clan_Icon: require("../assets/img/unknown.png"),
     img: require("../assets/img/mei.png"),
     Kekkei_Genkais: [
       {
         id: "1",
-        name: "Sharingan",
-        icon: require("../assets/img/sharinga.png"),
+        name: "Boiler Release",
+        icon: require("../assets/img/fire.png"),
       },
       {
         id: "2",
-        name: "Mangekyō Sharingan",
-        icon: require("../assets/img/shisui_mangeko.png"),
+        name: "Lava Release",
+        icon: require("../assets/img/fire.png"),
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Earth Release",
+        icon: require("../assets/img/earth.png"),
+      },
+      {
+        id: "4",
+        name: "Water Release",
+        icon: require("../assets/img/water.png"),
+      },
     ],
   },
 
@@ -187,34 +251,36 @@ export default dataBook = [
     Village: "Hidden Mist",
     description: "The Shark",
     color: "#039be5",
-    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Village_Icon: require("../assets/img/hidden_mist_logo.png"),
     Afiliation: "AKatski",
     Afiliation_Icon: require("../assets/img/akatsuki.png"),
     Ninja_Level: "S rank",
     Gender: "Masculino",
-    clan: " Unkwon",
-    clan_Icon: require("../assets/img/uchiha_logo.png"),
+    clan: " Unknown",
+    clan_Icon: require("../assets/img/unknown.png"),
     img: require("../assets/img/kisame.png"),
-    Kekkei_Genkais: [
+
+    nature_Transformations: [
       {
         id: "1",
-        name: "Sharingan",
-        icon: require("../assets/img/sharinga.png"),
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
       },
       {
         id: "2",
-        name: "Mangekyō Sharingan",
-        icon: require("../assets/img/shisui_mangeko.png"),
-      },
-    ],
-    nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
-      {
-        id: "2", name: "Ligthing Release",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -245,13 +311,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -282,13 +361,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -319,13 +411,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -356,13 +461,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -393,13 +511,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
   {
@@ -429,13 +560,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -444,7 +588,7 @@ export default dataBook = [
     id: "13",
     Village: "Hidden Leef",
     description: "The Medical Ninja",
-    color: "#f8bbd0",
+    color: "#c2185b",
     Village_Icon: require("../assets/img/leef_village_logo.png"),
     Afiliation: "Akatsuki",
     Afiliation_Icon: require("../assets/img/akatsuki.png"),
@@ -466,13 +610,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -503,13 +660,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -540,13 +710,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
   {
@@ -576,13 +759,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -613,13 +809,26 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 
@@ -650,13 +859,260 @@ export default dataBook = [
       },
     ],
     nature_Transformations: [
-      { id: "1", name: "Fire Release", icon: require("../assets/img/fire.png") },
       {
-        id: "2", name: "Ligthing Release",
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
         icon: require("../assets/img/lightning.png"),
       },
-      { id: "3", name: "Wind Release", icon: require("../assets/img/wind.png") },
-      {  id: "4",name: "Yang Release", icon: require("../assets/img/yang.png") },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
+    ],
+  },
+  {
+    name: "Manato",
+    id: "19",
+    Village: "Hidden Leef",
+    description: "The Yellow Flash",
+    color: "#fbc02d",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "Akatsuki",
+    Afiliation_Icon: require("../assets/img/akatsuki.png"),
+    Ninja_Level: "Kage",
+    Ninja_Level_Icon: require("../assets/img/hokage.png"),
+    Gender: "Male",
+    clan: " Manikaze",
+    clan_Icon: require("../assets/img/uchiha_logo.png"),
+    img: require("../assets/img/minato.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "Sharingan",
+        icon: require("../assets/img/sharinga.png"),
+      },
+      {
+        id: "2",
+        name: "Mangekyō Sharingan",
+        icon: require("../assets/img/shisui_mangeko.png"),
+      },
+    ],
+    nature_Transformations: [
+      {
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
+    ],
+  },
+
+  {
+    name: "Neji",
+    id: "20",
+    Village: "Hidden Leef",
+    description: "The Byagukan Genius",
+    color: "#3e2723",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "Team Gay",
+    Afiliation_Icon: require("../assets/img/tean.png"),
+    Ninja_Level: "Jounin",
+    Ninja_Level_Icon: null,
+    Gender: "Male",
+    clan: " Hyuga",
+    clan_Icon: require("../assets/img/hyuga.png"),
+    img: require("../assets/img/neji.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "byakugan",
+        icon: require("../assets/img/byakugan.png"),
+      },
+    ],
+    nature_Transformations: [
+      {
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
+    ],
+  },
+
+  {
+    name: "Orochimaru",
+    id: "21",
+    Village: "Hidden Leef",
+    description: "Legendary Sanin",
+    color: "#6d4c41",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "None",
+    Afiliation_Icon: require("../assets/img/tean.png"),
+    Ninja_Level: "Kage Level",
+    Ninja_Level_Icon: null,
+    Gender: "Male",
+    clan: " Unknown",
+    clan_Icon: require("../assets/img/unknown.png"),
+    img: require("../assets/img/orochimaru.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "byakugan",
+        icon: require("../assets/img/byakugan.png"),
+      },
+    ],
+    nature_Transformations: [
+      {
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
+    ],
+  },
+
+  {
+    name: "Choji",
+    id: "22",
+    Village: "Hidden Leef",
+    description: "Double Expantion",
+    color: "#7b1fa2",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "Team Azuma",
+    Afiliation_Icon: require("../assets/img/tean.png"),
+    Ninja_Level: "Jounin",
+    Ninja_Level_Icon: null,
+    Gender: "Male",
+    clan: " Akimichi",
+    clan_Icon: require("../assets/img/akimichi_logo.png"),
+    img: require("../assets/img/choji.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "byakugan",
+        icon: require("../assets/img/byakugan.png"),
+      },
+    ],
+    nature_Transformations: [
+      {
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
+    ],
+  },
+
+  {
+    name: "Tobirama",
+    id: "23",
+    Village: "Hidden Leef",
+    description: "Uchia Hater",
+    color: "#1e88e5",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "None",
+    Afiliation_Icon: require("../assets/img/tean.png"),
+    Ninja_Level: "Kage",
+    Ninja_Level_Icon: require("../assets/img/hokage.png"),
+    Gender: "Male",
+    clan: "Senju",
+    clan_Icon: require("../assets/img/senju_logo.png"),
+    img: require("../assets/img/tobirama.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "byakugan",
+        icon: require("../assets/img/byakugan.png"),
+      },
+    ],
+    nature_Transformations: [
+      {
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
     ],
   },
 ];

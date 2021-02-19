@@ -1,11 +1,14 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createSharedElementStackNavigator } from 'react-navigation-shared-element'
+import { createSharedElementStackNavigator } from "react-navigation-shared-element";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./src/screens/home";
 import CharacterDetails from "./src/screens/characterDetails";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import ChacterGallery from "./src/screens/characterGallery";
+import Rating from "./src/screens/rating";
+import Classification from "./src/screens/classification";
 
 const stack = createSharedElementStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -37,17 +40,35 @@ const TabNavigation = () => {
       }}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Rating" component={Home} />
-      <Tab.Screen name="Classification" component={Home} />
+      <Tab.Screen name="Rating" component={Rating} />
+      <Tab.Screen name="Classification" component={Classification} />
     </Tab.Navigator>
   );
 };
 export default function App() {
   return (
     <NavigationContainer>
-      <stack.Navigator initialRouteName="Home" headerMode="none">
+      <stack.Navigator initialRouteName="Home" headerMode="none"  >
         <stack.Screen name="Home" component={TabNavigation} />
-        <stack.Screen name="CharacterDetails" component={CharacterDetails} />
+        <stack.Screen
+          name="CharacterDetails"
+          component={CharacterDetails}
+          options={() => ({
+            gestureEnabled: false,
+            transitionSpec:{
+              open:{animation: "timing",config: 1000},
+              close:{animation: "timing",config: 1000}
+            },
+            cardStyleInterpolator: ({current: {progress}})=>{
+              return {
+                cardStyle:{
+                  opacity: progress ,
+                }
+              }
+            }
+          })}
+        />
+            <stack.Screen name="Gallery" component={ChacterGallery}  />
       </stack.Navigator>
     </NavigationContainer>
   );

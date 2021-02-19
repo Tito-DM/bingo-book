@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
 
   image: {
     width: width / 2 - 25,
-    height: height / 2 - 114,
+    height: height / 2 - 98,
     position: "absolute",
     bottom: 0,
     right: 5,
