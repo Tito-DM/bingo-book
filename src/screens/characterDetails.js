@@ -14,12 +14,12 @@ import { SharedElement } from "react-navigation-shared-element";
 import { Divider } from "react-native-elements";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-const DURATION = 400;
+const DURATION = 500;
 const { width, height } = Dimensions.get("screen");
 const ITEM_HEIGHT = height * 0.2;
 const TOP_HEADER_HEIGHT = height * 0.3;
 const DiVIDERCOLOR = "grey";
-
+const AnimatableTouchableOpacity = Animatable.createAnimatableComponent(TouchableOpacity);
 const CharacterDetails = ({ navigation, route }) => {
   const { item } = route.params;
   return (
@@ -86,7 +86,7 @@ const CharacterDetails = ({ navigation, route }) => {
         <View style={styles.bg}>
           <Animatable.View
             animation="bounceIn"
-            delay={0.2}
+            delay={DURATION}
             style={{ flexDirection: "row", justifyContent: "space-evenly" }}
           >
             <View
@@ -140,7 +140,7 @@ const CharacterDetails = ({ navigation, route }) => {
           </Animatable.View>
 
           <Animatable.View
-            animation="fadeInUp"
+            animation="bounceIn"
             delay={DURATION}
             style={{
               padding: 10,
@@ -266,9 +266,9 @@ const CharacterDetails = ({ navigation, route }) => {
           </Animatable.View>
         </View>
       </SharedElement>
-      <Animatable.View
-        animation="bounceInUp"
-        delay={0.2}
+
+      <AnimatableTouchableOpacity
+       onPress={() => navigation.navigate("Gallery", { item })}
         style={{
           position: "absolute",
           bottom: 0,
@@ -288,15 +288,14 @@ const CharacterDetails = ({ navigation, route }) => {
           elevation: 1,
         }}
       >
-        <TouchableOpacity>
+       
           <MaterialCommunityIcons
             name="image-multiple-outline"
             size={25}
             color="#fff"
-            onPress={() => navigation.navigate("Gallery", { item })}
+           
           />
-        </TouchableOpacity>
-      </Animatable.View>
+      </AnimatableTouchableOpacity>
     </View>
   );
 };
