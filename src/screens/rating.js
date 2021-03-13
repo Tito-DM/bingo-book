@@ -15,6 +15,7 @@ const { width, height } = Dimensions.get("window");
 
 const Rating = () => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [hideCheckBox, sethideCheckBox] = useState(false);
   const [toggleCheckBox1, setToggleCheckBox1] = useState(false);
   const [opacityValue, setOpacityValue] = useState(0);
   const [cardMarginTop, setCardMarginTop] = useState(-100);
@@ -31,8 +32,9 @@ const Rating = () => {
             onValueChange={(newValue) => {
               setToggleCheckBox(newValue);
               setToggleCheckBox1(false)
-              setOpacityValue(0)
-              setCardMarginTop(-100)
+              setOpacityValue(1)
+              setCardMarginTop(10)
+              sethideCheckBox(false)
             }}
           />
         </View>
@@ -47,6 +49,24 @@ const Rating = () => {
               setToggleCheckBox(false)
               setOpacityValue(1)
               setCardMarginTop(10)
+              sethideCheckBox(false)
+              }
+        
+            }
+          />
+        </View>
+
+        <View style={styles.cheboxView}>
+          <Text>Hide</Text>
+          <CheckBox
+            disabled={false}
+            value={hideCheckBox}
+            onValueChange={(newValue) =>{  
+              sethideCheckBox(newValue) 
+              setToggleCheckBox(false)
+              setToggleCheckBox1(false)
+              setOpacityValue(0)
+              setCardMarginTop(-100)
               }
         
             }
