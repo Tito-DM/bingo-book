@@ -9,11 +9,15 @@ import {
   Dimensions,
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
-import { Avatar, Divider } from "react-native-elements";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import Card from "../components/card";
+
 const { width, height } = Dimensions.get("window");
+
 const Rating = () => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [toggleCheckBox1, setToggleCheckBox1] = useState(false);
+  const [opacityValue, setOpacityValue] = useState(0);
+  const [cardMarginTop, setCardMarginTop] = useState(-100);
 
   return (
     <View style={styles.androidSafearea}>
@@ -21,15 +25,38 @@ const Rating = () => {
       <View style={{ flexDirection: "row" }}>
         <View style={styles.cheboxView}>
           <Text>Character Rating</Text>
-          <CheckBox />
+          <CheckBox
+            disabled={false}
+            value={toggleCheckBox}
+            onValueChange={(newValue) => {
+              setToggleCheckBox(newValue);
+              setToggleCheckBox1(false)
+              setOpacityValue(0)
+              setCardMarginTop(-100)
+            }}
+          />
         </View>
 
         <View style={styles.cheboxView}>
           <Text>Other</Text>
-          <CheckBox />
+          <CheckBox
+            disabled={false}
+            value={toggleCheckBox1}
+            onValueChange={(newValue) =>{  
+              setToggleCheckBox1(newValue) 
+              setToggleCheckBox(false)
+              setOpacityValue(1)
+              setCardMarginTop(10)
+              }
+        
+            }
+          />
         </View>
+        
       </View>
-      <View style={{ flexDirection: "row" }}>
+      
+      <View style={{opacity:opacityValue}}>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
         <TextInput style={styles.textinput} />
         <TouchableOpacity style={styles.btn_add}>
           <Text style={{ color: "white" }}>+</Text>
@@ -53,238 +80,20 @@ const Rating = () => {
       <TouchableOpacity style={styles.btn_done}>
         <Text style={styles.text}>Done</Text>
       </TouchableOpacity>
- <View style={{marginBottom: 60}}></View>
+      <View style={{ marginBottom: 60 }}></View>
+      </View>
       {/** card*/}
-
-      <View style={styles.card}>
-        <Text style={styles.titleCategory}>Best GenJutsu User</Text>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginBottom: 10,
-            marginTop: 20,
-          }}
-        >
-          <Avatar
-            rounded
-            size="large"
-            source={{
-              uri:
-              'https://images4.alphacoders.com/944/944476.png',
-            }}
-          />
-          <Text>Shisui</Text>
-          <Text>80%</Text>
-          <TouchableOpacity style={styles.btn_vote}>
-            <Text style={styles.text}>Vote</Text>
-          </TouchableOpacity>  
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginBottom: 10,
-            marginTop: 20,
-          }}
-        >
-          <Avatar
-            rounded
-            size="large"
-            source={{
-              uri:
-                "https://images3.alphacoders.com/644/644161.jpg",
-            }}
-          />
-          <Text>Itachi</Text>
-          <Text>50%</Text>
-          <TouchableOpacity style={styles.btn_vote}>
-            <Text style={styles.text}>Vote</Text>
-          </TouchableOpacity>
-
-          
-        </View>
-
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginBottom: 10,
-            marginTop: 20,
-          }}
-        >
-          <Avatar
-            rounded
-            size="large"
-            source={{
-              uri:"https://images8.alphacoders.com/605/605504.png",
-            }}
-          />
-          <Text>Sasuke</Text>
-          <Text>20%</Text>
-          <TouchableOpacity style={styles.btn_vote}>
-            <Text style={styles.text}>Vote</Text>
-          </TouchableOpacity>
-
-          
-        </View>
-
-
-
-        <Divider style={{ backgroundColor: "grey" }} />
-
-
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginTop: 10,
-            marginBottom:10
-          }}
-        >
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Text>Total Voting</Text>
-            <Text> 120</Text>
-          </View>
-
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Ionicons name="heart-outline" size={20} color="grey" />
-            <Text> 35</Text>
-          </View>
-
-          <TouchableOpacity>
-            <Text>comments</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text>add Character</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-
-
-      <View style={styles.card}>
-        <Text style={styles.titleCategory}>Best GenJutsu User</Text>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginBottom: 10,
-            marginTop: 20,
-          }}
-        >
-          <Avatar
-            rounded
-            source={{
-              uri:
-                "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
-            }}
-          />
-          <Text>Shisui</Text>
-          <Text>80%</Text>
-          <TouchableOpacity style={styles.btn_vote}>
-            <Text style={styles.text}>Vote</Text>
-          </TouchableOpacity>  
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginBottom: 10,
-            marginTop: 20,
-          }}
-        >
-          <Avatar
-            rounded
-            source={{
-              uri:
-                "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
-            }}
-          />
-          <Text>Itachi</Text>
-          <Text>50%</Text>
-          <TouchableOpacity style={styles.btn_vote}>
-            <Text style={styles.text}>Vote</Text>
-          </TouchableOpacity>
-
-          
-        </View>
-
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginBottom: 10,
-            marginTop: 20,
-          }}
-        >
-          <Avatar
-            rounded
-            source={{
-              uri:
-                "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
-            }}
-          />
-          <Text>Sasuke</Text>
-          <Text>20%</Text>
-          <TouchableOpacity style={styles.btn_vote}>
-            <Text style={styles.text}>Vote</Text>
-          </TouchableOpacity>
-
-          
-        </View>
-
-
-
-        <Divider style={{ backgroundColor: "grey" }} />
-
-
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginTop: 10,
-            marginBottom:10
-          }}
-        >
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Text>Total Voting</Text>
-            <Text> 120</Text>
-          </View>
-
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Ionicons name="heart-outline" size={20} color="grey" />
-            <Text> 35</Text>
-          </View>
-
-          <TouchableOpacity>
-            <Text>comments</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text>add Character</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      <Card cardMarginTop = {cardMarginTop}/>   
     </View>
   );
 };
 const styles = StyleSheet.create({
-    titleCategory:{
-        margin: 10,
-        letterSpacing: 1.2,
-        fontWeight: "600",
-        fontSize: 18
-    },
+  titleCategory: {
+    margin: 10,
+    letterSpacing: 1.2,
+    fontWeight: "600",
+    fontSize: 18,
+  },
   btn_vote: {
     backgroundColor: "#2e7d32",
     width: 60,
@@ -294,7 +103,6 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: "white",
-    marginTop: 10,
     borderRadius: 10,
     shadowColor: "#263238",
     shadowOffset: { width: 0, height: 2 },
@@ -313,14 +121,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     position: "absolute",
     right: 0,
-    top: 200,
+    top: 100,
     marginRight: 20,
-   
   },
   btn_add: {
     backgroundColor: "#2e7d32",
-    width: 30,
-    height: 30,
+    width: 50,
+    height: 50,
     borderRadius: 50,
     alignItems: "center",
     justifyContent: "center",
@@ -337,7 +144,7 @@ const styles = StyleSheet.create({
   },
   textinput: {
     width: width - 100,
-    height: 30,
+    height: 40,
     borderWidth: 1,
     borderColor: "black",
     borderRadius: 5,
@@ -347,9 +154,9 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width,
     height: height,
-    padding:10,
+    padding: 10,
     paddingTop: Platform.OS === "android" ? 58 : null,
-    backgroundColor: "#F9F9F9"
+    backgroundColor: "#F9F9F9",
   },
 });
 export default Rating;

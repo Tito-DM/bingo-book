@@ -30,7 +30,7 @@ const TabNavigation = () => {
 
           // You can return any component that you like here!
           return (
-            <MaterialCommunityIcons name={iconName} size={35} color={color} />
+            <MaterialCommunityIcons name={iconName} size={28} color={color} />
           );
         },
       })}
