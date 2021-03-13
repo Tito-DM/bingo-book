@@ -14,9 +14,9 @@ import Card from "../components/card";
 const { width, height } = Dimensions.get("window");
 
 const Rating = () => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [characterRatingCheckBox, setcharacterRatingCheckBox] = useState(false);
   const [hideCheckBox, sethideCheckBox] = useState(false);
-  const [toggleCheckBox1, setToggleCheckBox1] = useState(false);
+  const [otherCheckBox, setOther] = useState(false);
   const [opacityValue, setOpacityValue] = useState(0);
   const [cardMarginTop, setCardMarginTop] = useState(-100);
 
@@ -28,10 +28,10 @@ const Rating = () => {
           <Text>Character Rating</Text>
           <CheckBox
             disabled={false}
-            value={toggleCheckBox}
+            value={characterRatingCheckBox}
             onValueChange={(newValue) => {
-              setToggleCheckBox(newValue);
-              setToggleCheckBox1(false)
+              setcharacterRatingCheckBox(newValue);
+              setOther(false)
               setOpacityValue(1)
               setCardMarginTop(10)
               sethideCheckBox(false)
@@ -43,10 +43,10 @@ const Rating = () => {
           <Text>Other</Text>
           <CheckBox
             disabled={false}
-            value={toggleCheckBox1}
+            value={otherCheckBox}
             onValueChange={(newValue) =>{  
-              setToggleCheckBox1(newValue) 
-              setToggleCheckBox(false)
+              setOther(newValue) 
+              setcharacterRatingCheckBox(false)
               setOpacityValue(1)
               setCardMarginTop(10)
               sethideCheckBox(false)
@@ -63,8 +63,8 @@ const Rating = () => {
             value={hideCheckBox}
             onValueChange={(newValue) =>{  
               sethideCheckBox(newValue) 
-              setToggleCheckBox(false)
-              setToggleCheckBox1(false)
+              setcharacterRatingCheckBox(false)
+              setOther(false)
               setOpacityValue(0)
               setCardMarginTop(-100)
               }
