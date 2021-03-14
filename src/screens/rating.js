@@ -11,8 +11,12 @@ import {
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
 import Card from "../components/card";
-
+import TextInputComponent from "../components/textInput";
 const { width, height } = Dimensions.get("window");
+const TEXT_INPUT_COLOR = "#e0e0e0";
+const TEXT_INPUT_LEFT_PO = 18;
+const TEXT_INPUT_TOP_PO = 20;
+const TEXT_INPUT_WIDTH = "100%";
 
 const Rating = () => {
   const [characterRatingCheckBox, setcharacterRatingCheckBox] = useState(false);
@@ -20,24 +24,18 @@ const Rating = () => {
   const [otherCheckBox, setOther] = useState(false);
   const [opacityValue, setOpacityValue] = useState(0);
   const [cardMarginTop, setCardMarginTop] = useState(-90);
+  const [textPlaceHolder, setTextPlaceHolder] = useState("");
 
   return (
     <SafeAreaView style={styles.androidSafearea}>
       <View style={{ padding: 10 }}>
-        <TextInput
-          placeholder="Search Rating"
-          underlineColorAndroid="transparent"
-          style={{
-            width: "100%",
-            height: 40,
-            borderWidth: 1,
-            borderColor: "black",
-            borderRadius: 5,
-            backgroundColor: "white",
-            padding: 5,
-            marginBottom: 10,
-          }}
+        <TextInputComponent
+          color_={TEXT_INPUT_COLOR}
+          left_={TEXT_INPUT_LEFT_PO}
+          top_={TEXT_INPUT_TOP_PO}
+          width_={TEXT_INPUT_WIDTH}
         />
+
         <Text
           style={{
             color: "white",
@@ -46,7 +44,6 @@ const Rating = () => {
             marginBottom: 5,
             letterSpacing: 1.5,
             textTransform: "uppercase",
-            
           }}
         >
           Create Rating
@@ -68,6 +65,7 @@ const Rating = () => {
                 setOpacityValue(1);
                 setCardMarginTop(10);
                 sethideCheckBox(false);
+                setTextPlaceHolder("Enter a character Name");
               }}
             />
           </View>
@@ -83,6 +81,9 @@ const Rating = () => {
                 setOpacityValue(1);
                 setCardMarginTop(10);
                 sethideCheckBox(false);
+                setTextPlaceHolder(
+                  "Enter jutsu name or other category you want to create"
+                );
               }}
             />
           </View>
@@ -105,10 +106,7 @@ const Rating = () => {
 
         <View style={{ opacity: opacityValue }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <TextInput
-              style={styles.textinput}
-              placeholder="Enter a character Name"
-            />
+            <TextInput style={styles.textinput} placeholder={textPlaceHolder} />
             {/**   <TouchableOpacity style={styles.btn_add}>
             <Text style={{ color: "white" }}>+</Text>
           </TouchableOpacity> */}
@@ -170,6 +168,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
+    letterSpacing:1.2
   },
   btn_done: {
     backgroundColor: "#2e7d32",
@@ -181,6 +180,7 @@ const styles = StyleSheet.create({
     right: 0,
     top: 60,
     marginRight: 20,
+    borderRadius:5
   },
   btn_add: {
     backgroundColor: "#2e7d32",
@@ -204,10 +204,10 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 40,
     borderWidth: 1,
-    borderColor: "black",
-    borderRadius: 5,
+    borderColor: "#e0e0e0",
+    borderRadius: 10,
     backgroundColor: "white",
-    padding: 5,
+    padding: 10,
   },
   androidSafearea: {
     flex: 1,

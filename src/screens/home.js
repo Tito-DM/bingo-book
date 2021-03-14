@@ -15,12 +15,15 @@ import {
 } from "react-native";
 import { SharedElement } from "react-navigation-shared-element";
 import dataBook from "../../db/data";
-import Ionicons from "react-native-vector-icons/Ionicons";
-
+import { Ionicons, Octicons, AntDesign } from "react-native-vector-icons";
 import Star from "../components/star";
+import TextInputComponent from "../components/textInput";
 const { width, height } = Dimensions.get("screen");
 const ITEM_HEIGHT = height * 0.3;
-
+const TEXT_INPUT_COLOR = "#e0e0e0";
+const TEXT_INPUT_LEFT_PO = 10;
+const TEXT_INPUT_TOP_PO = 10;
+const TEXT_INPUT_WIDTH = "97%";
 const Home = ({ navigation }) => {
   let stars = [1, 2, 3, 4, 5];
   const [rating, setRating] = useState(3);
@@ -31,38 +34,27 @@ const Home = ({ navigation }) => {
           alignItems: "flex-start",
           marginLeft: 10,
           marginTop: 25,
-          flexDirection: "row",
         }}
       >
-        <TextInput
-          style={{
-            borderBottomWidth: 1,
-            width: width - 80,
-            marginRight: 10,
-            borderBottomColor: "#00796b",
-          }}
-          placeholder="enter a name"
+        <TextInputComponent
+          color_={TEXT_INPUT_COLOR}
+          left_={TEXT_INPUT_LEFT_PO}
+          top_={TEXT_INPUT_TOP_PO}
+          width_={TEXT_INPUT_WIDTH}
         />
-        <TouchableOpacity>
-          <Ionicons
-            name="search"
-            size={30}
-            style={{ marginTop: -10 }}
-            color="grey"
-          />
-        </TouchableOpacity>
       </View>
 
       <View>
         <Text
           style={{
-            fontSize: 35,
+            fontSize: 38,
             fontWeight: "bold",
-            marginTop: 30,
+            marginTop: 10,
             letterSpacing: 1.2,
             opacity: 0.8,
             marginLeft: 5,
             color: "#880e4f",
+            textTransform: "capitalize",
           }}
         >
           Bing Book
@@ -138,14 +130,16 @@ const Home = ({ navigation }) => {
                     <Text
                       style={{
                         color: "white",
-                   
                       }}
                     >
                       more info...
                     </Text>
                   </TouchableOpacity>
                 </View>
-                <SharedElement id={`item.${item.id}.image`} style={styles.image}>
+                <SharedElement
+                  id={`item.${item.id}.image`}
+                  style={styles.image}
+                >
                   <Image rounded source={item.img} style={styles.image} />
                 </SharedElement>
               </View>
@@ -169,7 +163,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.6,
     shadowRadius: 2,
     elevation: 1,
-    textTransform: "capitalize"
+    textTransform: "capitalize",
   },
   Village: {
     color: "white",

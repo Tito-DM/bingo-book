@@ -7,83 +7,19 @@ import {
   Dimensions,
 } from "react-native";
 
-import { Avatar, Divider } from "react-native-elements";
-import { Ionicons, Octicons, AntDesign } from "react-native-vector-icons";
+import {Divider } from "react-native-elements";
+import {AntDesign } from "react-native-vector-icons";
+import CharacterVotingRow from "../components/characterVotingRow"
 const { width, height } = Dimensions.get("window");
 const Card = () => {
   return (
     <View>
       <View style={[styles.card]}>
         <Text style={styles.titleCategory}>Best GenJutsu User</Text>
-
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginBottom: 10,
-            marginTop: 20,
-          }}
-        >
-          <Avatar
-            rounded
-            size="large"
-            source={{
-              uri: "https://images4.alphacoders.com/944/944476.png",
-            }}
-          />
-          <Text>Shisui</Text>
-          <Text>80%</Text>
-          <TouchableOpacity style={styles.btn_vote}>
-            <Text style={styles.text}>Vote</Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginBottom: 10,
-            marginTop: 20,
-          }}
-        >
-          <Avatar
-            rounded
-            size="large"
-            source={{
-              uri: "https://images3.alphacoders.com/644/644161.jpg",
-            }}
-          />
-          <Text>Itachi</Text>
-          <Text>50%</Text>
-          <TouchableOpacity style={styles.btn_vote}>
-            <Text style={styles.text}>Vote</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            marginBottom: 10,
-            marginTop: 20,
-          }}
-        >
-          <Avatar
-            rounded
-            size="large"
-            source={{
-              uri: "https://images8.alphacoders.com/605/605504.png",
-            }}
-          />
-          <Text>Sasuke</Text>
-          <Text>20%</Text>
-          <TouchableOpacity style={styles.btn_vote}>
-            <Text style={styles.text}>Vote</Text>
-          </TouchableOpacity>
-        </View>
-
+    <CharacterVotingRow name={"Shisui"} percent={"80%"} avatar={"https://images4.alphacoders.com/944/944476.png"}/>
+    <CharacterVotingRow name={"Itachi"} percent={"50%"} avatar={"https://images7.alphacoders.com/113/1133297.png"}/>
+    <CharacterVotingRow name={"Sasuke"} percent={"20%"} avatar={"https://images8.alphacoders.com/605/605504.png"}/> 
+   
         <Divider style={{ backgroundColor: "grey" }} />
 
         <View
@@ -99,9 +35,9 @@ const Card = () => {
             <Text style={{ color: "grey", fontSize: 12, opacity: 0.8 }}>
               Total Voting
             </Text>
+
             <Text style={{ color: "grey", fontSize: 12, opacity: 0.8 }}>
-              {" "}
-              120
+              {" 120"}
             </Text>
           </View>
 
@@ -142,13 +78,6 @@ const styles = StyleSheet.create({
     opacity: 0.9,
     textTransform: "uppercase",
   },
-  btn_vote: {
-    backgroundColor: "#2e7d32",
-    width: 60,
-    height: 30,
-    alignItems: "center",
-    justifyContent: "center",
-  },
   card: {
     backgroundColor: "white",
     shadowColor: "#263238",
@@ -163,6 +92,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
+    letterSpacing:1.2
   },
 });
 
