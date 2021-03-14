@@ -22,7 +22,7 @@ const Rating = () => {
   const [cardMarginTop, setCardMarginTop] = useState(-90);
 
   return (
-    <View style={styles.androidSafearea}>
+    <SafeAreaView style={styles.androidSafearea}>
       <View style={{ padding: 10 }}>
         <TextInput
           placeholder="Search Rating"
@@ -142,7 +142,7 @@ const Rating = () => {
         <Card />
         <Card />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
