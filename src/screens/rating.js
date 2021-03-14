@@ -7,6 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
   Dimensions,
+  ScrollView,
 } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
 import Card from "../components/card";
@@ -18,92 +19,129 @@ const Rating = () => {
   const [hideCheckBox, sethideCheckBox] = useState(false);
   const [otherCheckBox, setOther] = useState(false);
   const [opacityValue, setOpacityValue] = useState(0);
-  const [cardMarginTop, setCardMarginTop] = useState(-100);
+  const [cardMarginTop, setCardMarginTop] = useState(-90);
 
   return (
     <View style={styles.androidSafearea}>
-      <TextInput placeholder="Category Title" style={styles.textinput} />
-      <View style={{ flexDirection: "row" }}>
-        <View style={styles.cheboxView}>
-          <Text>Character Rating</Text>
-          <CheckBox
-            disabled={false}
-            value={characterRatingCheckBox}
-            onValueChange={(newValue) => {
-              setcharacterRatingCheckBox(newValue);
-              setOther(false)
-              setOpacityValue(1)
-              setCardMarginTop(10)
-              sethideCheckBox(false)
-            }}
-          />
+      <View style={{ padding: 10 }}>
+        <TextInput
+          placeholder="Search Rating"
+          underlineColorAndroid="transparent"
+          style={{
+            width: "100%",
+            height: 40,
+            borderWidth: 1,
+            borderColor: "black",
+            borderRadius: 5,
+            backgroundColor: "white",
+            padding: 5,
+            marginBottom: 10,
+          }}
+        />
+        <Text
+          style={{
+            color: "white",
+            marginTop: 5,
+            fontSize: 15,
+            marginBottom: 5,
+            letterSpacing: 1.5,
+            textTransform: "uppercase",
+            
+          }}
+        >
+          Create Rating
+        </Text>
+        <TextInput
+          placeholder="Category Title"
+          style={styles.textinput}
+          underlineColorAndroid="transparent"
+        />
+        <View style={{ flexDirection: "row" }}>
+          <View style={styles.cheboxView}>
+            <Text style={styles.text}>Character Rating</Text>
+            <CheckBox
+              disabled={false}
+              value={characterRatingCheckBox}
+              onValueChange={(newValue) => {
+                setcharacterRatingCheckBox(newValue);
+                setOther(false);
+                setOpacityValue(1);
+                setCardMarginTop(10);
+                sethideCheckBox(false);
+              }}
+            />
+          </View>
+
+          <View style={styles.cheboxView}>
+            <Text style={styles.text}>Other</Text>
+            <CheckBox
+              disabled={false}
+              value={otherCheckBox}
+              onValueChange={(newValue) => {
+                setOther(newValue);
+                setcharacterRatingCheckBox(false);
+                setOpacityValue(1);
+                setCardMarginTop(10);
+                sethideCheckBox(false);
+              }}
+            />
+          </View>
+
+          <View style={styles.cheboxView}>
+            <Text style={styles.text}>Hide</Text>
+            <CheckBox
+              disabled={false}
+              value={hideCheckBox}
+              onValueChange={(newValue) => {
+                sethideCheckBox(newValue);
+                setcharacterRatingCheckBox(false);
+                setOther(false);
+                setOpacityValue(0);
+                setCardMarginTop(-90);
+              }}
+            />
+          </View>
         </View>
 
-        <View style={styles.cheboxView}>
-          <Text>Other</Text>
-          <CheckBox
-            disabled={false}
-            value={otherCheckBox}
-            onValueChange={(newValue) =>{  
-              setOther(newValue) 
-              setcharacterRatingCheckBox(false)
-              setOpacityValue(1)
-              setCardMarginTop(10)
-              sethideCheckBox(false)
-              }
-        
-            }
-          />
-        </View>
+        <View style={{ opacity: opacityValue }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <TextInput
+              style={styles.textinput}
+              placeholder="Enter a character Name"
+            />
+            {/**   <TouchableOpacity style={styles.btn_add}>
+            <Text style={{ color: "white" }}>+</Text>
+          </TouchableOpacity> */}
+          </View>
+          {/** character edit and delete view */}
+          <View></View>
+          {/** best to worse checkbox */}
 
-        <View style={styles.cheboxView}>
-          <Text>Hide</Text>
-          <CheckBox
-            disabled={false}
-            value={hideCheckBox}
-            onValueChange={(newValue) =>{  
-              sethideCheckBox(newValue) 
-              setcharacterRatingCheckBox(false)
-              setOther(false)
-              setOpacityValue(0)
-              setCardMarginTop(-100)
-              }
-        
-            }
-          />
-        </View>
-        
-      </View>
-      
-      <View style={{opacity:opacityValue}}>
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <TextInput style={styles.textinput} />
-        <TouchableOpacity style={styles.btn_add}>
-          <Text style={{ color: "white" }}>+</Text>
-        </TouchableOpacity>
-      </View>
-      {/** character edit and delete view */}
-      <View></View>
-      {/** best to worse checkbox */}
+          <View style={{ flexDirection: "row" }}>
+            <View style={styles.cheboxView}>
+              <Text style={styles.text}>Best</Text>
+              <CheckBox />
+            </View>
 
-      <View style={{ flexDirection: "row" }}>
-        <View style={styles.cheboxView}>
-          <Text>Best</Text>
-          <CheckBox />
+            <View style={styles.cheboxView}>
+              <Text style={styles.text}>Worse</Text>
+              <CheckBox />
+            </View>
+          </View>
+          <TouchableOpacity style={styles.btn_done}>
+            <Text style={styles.text}>Done</Text>
+          </TouchableOpacity>
+          <View style={{ marginBottom: 20 }}></View>
         </View>
-
-        <View style={styles.cheboxView}>
-          <Text>Worse</Text>
-          <CheckBox />
-        </View>
-      </View>
-      <TouchableOpacity style={styles.btn_done}>
-        <Text style={styles.text}>Done</Text>
-      </TouchableOpacity>
-      <View style={{ marginBottom: 60 }}></View>
       </View>
       {/** card*/}
-      <Card cardMarginTop = {cardMarginTop}/>   
+      <ScrollView style={{ marginTop: cardMarginTop }}>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </ScrollView>
     </View>
   );
 };
@@ -141,7 +179,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     position: "absolute",
     right: 0,
-    top: 100,
+    top: 60,
     marginRight: 20,
   },
   btn_add: {
@@ -163,20 +201,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textinput: {
-    width: width - 100,
+    width: "100%",
     height: 40,
     borderWidth: 1,
     borderColor: "black",
     borderRadius: 5,
     backgroundColor: "white",
+    padding: 5,
   },
   androidSafearea: {
     flex: 1,
     width: width,
     height: height,
-    padding: 10,
     paddingTop: Platform.OS === "android" ? 58 : null,
-    backgroundColor: "#F9F9F9",
+    backgroundColor: "#4a148c",
   },
 });
 export default Rating;
