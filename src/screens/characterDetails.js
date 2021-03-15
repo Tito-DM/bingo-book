@@ -347,7 +347,7 @@ const styles = StyleSheet.create({
     paddingTop: 32,
     backgroundColor: "white",
     transform: [{ translateY: TOP_HEADER_HEIGHT + 20 }],
-    borderRadius: 15,
+    borderRadius: 25,
   },
   scrollView: {
     height: "20%",

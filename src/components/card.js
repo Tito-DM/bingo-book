@@ -7,19 +7,31 @@ import {
   Dimensions,
 } from "react-native";
 
-import {Divider } from "react-native-elements";
-import {AntDesign } from "react-native-vector-icons";
-import CharacterVotingRow from "../components/characterVotingRow"
+import { Divider } from "react-native-elements";
+import { AntDesign } from "react-native-vector-icons";
+import CharacterVotingRow from "../components/characterVotingRow";
 const { width, height } = Dimensions.get("window");
-const Card = () => {
+const Card = ({ navigation }) => {
   return (
     <View>
       <View style={[styles.card]}>
         <Text style={styles.titleCategory}>Best GenJutsu User</Text>
-    <CharacterVotingRow name={"Shisui"} percent={"80%"} avatar={"https://images4.alphacoders.com/944/944476.png"}/>
-    <CharacterVotingRow name={"Itachi"} percent={"50%"} avatar={"https://images7.alphacoders.com/113/1133297.png"}/>
-    <CharacterVotingRow name={"Sasuke"} percent={"20%"} avatar={"https://images8.alphacoders.com/605/605504.png"}/> 
-   
+        <CharacterVotingRow
+          name={"Shisui"}
+          percent={"80%"}
+          avatar={"https://images4.alphacoders.com/944/944476.png"}
+        />
+        <CharacterVotingRow
+          name={"Itachi"}
+          percent={"50%"}
+          avatar={"https://images7.alphacoders.com/113/1133297.png"}
+        />
+        <CharacterVotingRow
+          name={"Sasuke"}
+          percent={"20%"}
+          avatar={"https://images8.alphacoders.com/605/605504.png"}
+        />
+
         <Divider style={{ backgroundColor: "grey" }} />
 
         <View
@@ -42,17 +54,18 @@ const Card = () => {
           </View>
 
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <AntDesign name="like1" size={20} color="#e53935" />
+            <TouchableOpacity style={{marginRight: 3}}>
+              <AntDesign name="like1" size={20} color="#e53935" />
+            </TouchableOpacity>
+
             <Text style={{ color: "black", fontSize: 12, opacity: 0.9 }}>
-              {" "}
-              35
+              {"35"}
             </Text>
           </View>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Comments")}>
             <Text style={{ color: "#039be5", fontSize: 12, opacity: 0.8 }}>
-              {" "}
-              Comments
+              {"Comments"}
             </Text>
           </TouchableOpacity>
 
@@ -69,7 +82,7 @@ const Card = () => {
 
 const styles = StyleSheet.create({
   titleCategory: {
-    marginLeft: 25,
+    marginLeft: 28,
     marginTop: 10,
     letterSpacing: 1,
     fontWeight: "bold",
@@ -88,11 +101,11 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 50,
     width: width,
     marginBottom: 15,
-    borderBottomLeftRadius: 30,
+    borderBottomLeftRadius: 40,
   },
   text: {
     color: "white",
-    letterSpacing:1.2
+    letterSpacing: 1.2,
   },
 });
 

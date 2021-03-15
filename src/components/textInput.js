@@ -1,13 +1,21 @@
-import React from "react"
-import {View, TextInput} from "react-native"
+import React from "react";
+import { View, TextInput } from "react-native";
 
 import { AntDesign } from "react-native-vector-icons";
 
-const TextInputComponent = ({color_,left_,top_,width_})=>{
-    return(
-        <>
-        <TextInput
-        placeholder="Search"
+const TextInputComponent = ({
+  color_,
+  left_,
+  top_,
+  width_,
+  padding_,
+  marginB_,
+  placeHolder_,
+}) => {
+  return (
+    <>
+      <TextInput
+        placeholder={placeHolder_}
         underlineColorAndroid="transparent"
         style={{
           width: width_,
@@ -16,16 +24,16 @@ const TextInputComponent = ({color_,left_,top_,width_})=>{
           borderColor: color_,
           borderRadius: 10,
           backgroundColor: "white",
-          padding: 10,
-          marginBottom: 10,
-          paddingLeft: 35
+          padding: padding_,
+          marginBottom: marginB_,
+          paddingLeft: 35,
         }}
       />
-        <View style ={{position:"absolute", left:left_,top: top_}}>
-      <AntDesign name="search1" size={20} color={color_}  />
+      <View style={{ position: "absolute", left: left_, top: top_ }}>
+        <AntDesign name="search1" size={20} color={color_} />
       </View>
-      </>
-    )
-}
+    </>
+  );
+};
 
-export default TextInputComponent
+export default TextInputComponent;

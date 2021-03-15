@@ -9,6 +9,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ChacterGallery from "./src/screens/characterGallery";
 import Rating from "./src/screens/rating";
 import Classification from "./src/screens/classification";
+import Comment from "./src/screens/comments";
 
 const stack = createSharedElementStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -69,6 +70,7 @@ export default function App() {
           })}
         />
             <stack.Screen name="Gallery" component={ChacterGallery}  />
+            <stack.Screen name= "Comments" component={Comment}/>
       </stack.Navigator>
     </NavigationContainer>
   );

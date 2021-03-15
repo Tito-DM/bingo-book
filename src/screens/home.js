@@ -20,10 +20,13 @@ import Star from "../components/star";
 import TextInputComponent from "../components/textInput";
 const { width, height } = Dimensions.get("screen");
 const ITEM_HEIGHT = height * 0.3;
-const TEXT_INPUT_COLOR = "#e0e0e0";
+const TEXT_INPUT_COLOR = "#bdbdbd";
 const TEXT_INPUT_LEFT_PO = 10;
 const TEXT_INPUT_TOP_PO = 10;
 const TEXT_INPUT_WIDTH = "97%";
+const TEXT_INPUT_PADDING = 10;
+const TEXT_INPUT_MARGIN = 10;
+const TEXT_INPUT_PLACEHOLDER = "Search";
 const Home = ({ navigation }) => {
   let stars = [1, 2, 3, 4, 5];
   const [rating, setRating] = useState(3);
@@ -41,13 +44,16 @@ const Home = ({ navigation }) => {
           left_={TEXT_INPUT_LEFT_PO}
           top_={TEXT_INPUT_TOP_PO}
           width_={TEXT_INPUT_WIDTH}
+          padding_={TEXT_INPUT_PADDING}
+          margin_={TEXT_INPUT_MARGIN}
+          placeHolder_={TEXT_INPUT_PLACEHOLDER}
         />
       </View>
 
       <View>
         <Text
           style={{
-            fontSize: 38,
+            fontSize: 36,
             fontWeight: "bold",
             marginTop: 10,
             letterSpacing: 1.2,
@@ -55,9 +61,10 @@ const Home = ({ navigation }) => {
             marginLeft: 5,
             color: "#880e4f",
             textTransform: "capitalize",
+            fontFamily: 'sans-serif-thin'
           }}
         >
-          Bing Book
+          Bingo Book
         </Text>
       </View>
 
