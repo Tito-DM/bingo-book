@@ -63,13 +63,13 @@ const Card = ({ navigation }) => {
             </Text>
           </View>
 
-          <TouchableOpacity onPress={() => navigation.navigate("Comments")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Comments")} style={{height: 21}}>
             <Text style={{ color: "#039be5", fontSize: 12, opacity: 0.8 }}>
               {"Comments"}
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity  style={{height: 21}}>
             <Text style={{ color: "#039be5", fontSize: 12, opacity: 0.8 }}>
               Add Character
             </Text>

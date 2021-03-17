@@ -11,12 +11,15 @@ const TextInputComponent = ({
   padding_,
   marginB_,
   placeHolder_,
+  autoFocus_,
+  icon_
 }) => {
   return (
     <>
       <TextInput
         placeholder={placeHolder_}
         underlineColorAndroid="transparent"
+        autoFocus={autoFocus_}
         style={{
           width: width_,
           height: 40,
@@ -30,7 +33,7 @@ const TextInputComponent = ({
         }}
       />
       <View style={{ position: "absolute", left: left_, top: top_ }}>
-        <AntDesign name="search1" size={20} color={color_} />
+        <AntDesign name={icon_} size={20} color={color_} />
       </View>
     </>
   );

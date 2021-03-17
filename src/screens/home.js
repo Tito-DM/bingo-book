@@ -27,6 +27,8 @@ const TEXT_INPUT_WIDTH = "97%";
 const TEXT_INPUT_PADDING = 10;
 const TEXT_INPUT_MARGIN = 10;
 const TEXT_INPUT_PLACEHOLDER = "Search";
+const TEXT_INPUT_AUTOFOCUS = false;
+const TEXT_INPUT_ICON = "search1";
 const Home = ({ navigation }) => {
   let stars = [1, 2, 3, 4, 5];
   const [rating, setRating] = useState(3);
@@ -47,6 +49,9 @@ const Home = ({ navigation }) => {
           padding_={TEXT_INPUT_PADDING}
           margin_={TEXT_INPUT_MARGIN}
           placeHolder_={TEXT_INPUT_PLACEHOLDER}
+          autoFocus_={TEXT_INPUT_AUTOFOCUS}
+          icon_={TEXT_INPUT_ICON}
+          value_ = {""}
         />
       </View>
 
@@ -61,7 +66,7 @@ const Home = ({ navigation }) => {
             marginLeft: 5,
             color: "#880e4f",
             textTransform: "capitalize",
-            fontFamily: 'sans-serif-thin'
+
           }}
         >
           Bingo Book
@@ -185,7 +190,7 @@ const styles = StyleSheet.create({
 
   image: {
     width: width / 2 - 25,
-    height: height / 2 - 98,
+    height: height > 812 ? height / 2 - 138: height / 2 - 98 ,
     position: "absolute",
     bottom: 0,
     right: 5,

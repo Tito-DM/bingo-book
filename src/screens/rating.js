@@ -13,6 +13,7 @@ import CheckBox from "@react-native-community/checkbox";
 import Card from "../components/card";
 import TextInputComponent from "../components/textInput";
 import { MaterialIcons } from "react-native-vector-icons";
+import IosCheckBox from "../components/iosCheckBox";
 const { width, height } = Dimensions.get("window");
 const TEXT_INPUT_COLOR = "#bdbdbd";
 const TEXT_INPUT_LEFT_PO = 18;
@@ -21,15 +22,53 @@ const TEXT_INPUT_WIDTH = "100%";
 const TEXT_INPUT_PADDING = 10;
 const TEXT_INPUT_MARGIN = 10;
 const TEXT_INPUT_PLACEHOLDER = "Search";
+const TEXT_INPUT_AUTOFOCUS = false;
+const TEXT_INPUT_ICON = "search1";
+
 const Rating = ({ navigation }) => {
   const [characterRatingCheckBox, setcharacterRatingCheckBox] = useState(false);
   const [hideCheckBox, sethideCheckBox] = useState(false);
+  const [bestCheckBox, setBestCheckBox] = useState(false);
+  const [worseCheckBox, setWorseCheckBox] = useState(false);
   const [otherCheckBox, setOther] = useState(false);
   const [opacityValue, setOpacityValue] = useState(0);
   const [cardMarginTop, setCardMarginTop] = useState(-100);
   const [textPlaceHolder, setTextPlaceHolder] = useState("");
   const [list, setList] = useState([]);
   const [characterTextInput, setcharacterTextInput] = useState("");
+  const [enableTextInput, setEnableTextInput] = useState(true);
+  const [iosCheckBox, setIosCheckBox] = useState(false);
+
+  const checkboxHideHandler = (value, list) => {
+    sethideCheckBox(value);
+    setcharacterRatingCheckBox(false);
+    setOther(false);
+    setOpacityValue(0);
+    setCardMarginTop(-100);
+    list.length ? setCardMarginTop(-170) : null;
+  };
+  const checkboxHandler = (
+    name,
+    value,
+    checkCharacter,
+    checkOther,
+    placeholder
+  ) => {
+    if (name === "character") {
+      setcharacterRatingCheckBox(value);
+      setOther(checkOther);
+      setTextPlaceHolder(placeholder);
+    } else {
+      setOther(value);
+      setcharacterRatingCheckBox(checkCharacter);
+      setTextPlaceHolder(placeholder);
+    }
+
+    setOpacityValue(1);
+    setCardMarginTop(10);
+    sethideCheckBox(false);
+    setList([]);
+  };
 
   return (
     <SafeAreaView style={styles.androidSafearea}>
@@ -42,6 +81,8 @@ const Rating = ({ navigation }) => {
           padding_={TEXT_INPUT_PADDING}
           margin_={TEXT_INPUT_MARGIN}
           placeHolder_={TEXT_INPUT_PLACEHOLDER}
+          autoFocus_={TEXT_INPUT_AUTOFOCUS}
+          icon_={TEXT_INPUT_ICON}
         />
 
         <Text
@@ -57,6 +98,7 @@ const Rating = ({ navigation }) => {
           Create Rating
         </Text>
         <TextInput
+          editable={enableTextInput}
           placeholder="Category Title"
           style={styles.textinput}
           underlineColorAndroid="transparent"
@@ -64,51 +106,44 @@ const Rating = ({ navigation }) => {
         <View style={{ flexDirection: "row" }}>
           <View style={styles.cheboxView}>
             <Text style={styles.text}>Character Rating</Text>
-            <CheckBox
-              disabled={false}
+            <IosCheckBox
+             
               value={characterRatingCheckBox}
-              onValueChange={(newValue) => {
-                setcharacterRatingCheckBox(newValue);
-                setOther(false);
-                setOpacityValue(1);
-                setCardMarginTop(10);
-                sethideCheckBox(false);
-                setTextPlaceHolder("Enter a character Name");
-              }}
+              onValueChange={(value) =>
+                checkboxHandler(
+                  "character",
+                  value,
+                  true,
+                  false,
+                  "Enter a character Name"
+                )
+              }
             />
           </View>
 
           <View style={styles.cheboxView}>
             <Text style={styles.text}>Other</Text>
-            <CheckBox
+            <IosCheckBox
               disabled={false}
               value={otherCheckBox}
-              onValueChange={(newValue) => {
-                setOther(newValue);
-                setcharacterRatingCheckBox(false);
-                setOpacityValue(1);
-                setCardMarginTop(10);
-                sethideCheckBox(false);
-                setTextPlaceHolder(
+              onValueChange={(value) =>
+                checkboxHandler(
+                  "other",
+                  value,
+                  false,
+                  true,
                   "Enter jutsu name or other category you want to create"
-                );
-              }}
+                )
+              }
             />
           </View>
 
           <View style={styles.cheboxView}>
             <Text style={styles.text}>Hide</Text>
-            <CheckBox
-              disabled={false}
+            <IosCheckBox
+             
               value={hideCheckBox}
-              onValueChange={(newValue) => {
-                sethideCheckBox(newValue);
-                setcharacterRatingCheckBox(false);
-                setOther(false);
-                setOpacityValue(0);
-                setCardMarginTop(-100);
-                list.length ? setCardMarginTop(-170) : null;
-              }}
+              onValueChange={(value) => checkboxHideHandler(value, list)}
             />
           </View>
         </View>
@@ -197,12 +232,26 @@ const Rating = ({ navigation }) => {
           <View style={{ flexDirection: "row" }}>
             <View style={styles.cheboxView}>
               <Text style={styles.text}>Best</Text>
-              <CheckBox />
+              <IosCheckBox
+               
+                value={bestCheckBox}
+                onValueChange={(value) => {
+                  setBestCheckBox(value);
+                  setWorseCheckBox(false);
+                }}
+              />
             </View>
 
             <View style={styles.cheboxView}>
               <Text style={styles.text}>Worse</Text>
-              <CheckBox />
+              <IosCheckBox
+            
+                value={worseCheckBox}
+                onValueChange={(value) => {
+                  setWorseCheckBox(value);
+                  setBestCheckBox(false);
+                }}
+              />
             </View>
           </View>
           <TouchableOpacity style={styles.btn_done}>
@@ -214,10 +263,10 @@ const Rating = ({ navigation }) => {
       {/** card*/}
       <ScrollView style={{ marginTop: cardMarginTop }}>
         <Card navigation={navigation} />
-        <Card navigation={navigation}  />
-        <Card  navigation={navigation} />
-        <Card  navigation={navigation} />
-        <Card navigation={navigation}  />
+        <Card navigation={navigation} />
+        <Card navigation={navigation} />
+        <Card navigation={navigation} />
+        <Card navigation={navigation} />
       </ScrollView>
     </SafeAreaView>
   );
