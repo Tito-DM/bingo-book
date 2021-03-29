@@ -108,7 +108,7 @@ export default dataBook = [
     name: "Jiraiya",
     id: "3",
     Village: "Hidden Leef",
-    description: "Legendary Sami",
+    description: "The Toad Sage",
     color: "#827717",
     Village_Icon: require("../assets/img/leef_village_logo.png"),
     Afiliation: "Mount Myoboku",
@@ -249,7 +249,7 @@ export default dataBook = [
     name: "Kisame",
     id: "6",
     Village: "Hidden Mist",
-    description: "The Shark",
+    description: "The Tailless Jinchuriki",
     color: "#039be5",
     Village_Icon: require("../assets/img/hidden_mist_logo.png"),
     Afiliation: "AKatski",
@@ -931,7 +931,202 @@ export default dataBook = [
       },
     ],
   },
+  {
+    name: "Tobirama",
+    id: "23",
+    Village: "Hidden Leef",
+    description: "Uchia Hater",
+    color: "#1e88e5",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "None",
+    Afiliation_Icon: require("../assets/img/tean.png"),
+    Ninja_Level: "Kage",
+    Ninja_Level_Icon: require("../assets/img/hokage.png"),
+    Gender: "Male",
+    clan: "Senju",
+    clan_Icon: require("../assets/img/senju_logo.png"),
+    img: require("../assets/img/tobirama.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "byakugan",
+        icon: require("../assets/img/byakugan.png"),
+      },
+    ],
+    nature_Transformations: [
+      {
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
+    ],
+  },
 
+  {
+    name: "Tsume",
+    id: "24",
+    Village: "Hidden Leef",
+    description: "Feng over Feng",
+    color: "#31334a",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "Elite Jounin",
+    Afiliation_Icon: require("../assets/img/tean.png"),
+    Ninja_Level: "Jounin",
+    Gender: "Famele",
+    clan: "Inuzuka",
+    clan_Icon: require("../assets/img/Inuzuka_Symbol.png"),
+    img: require("../assets/img/tsume.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "Sharingan",
+        icon: require("../assets/img/sharinga.png"),
+      },
+      {
+        id: "2",
+        name: "Mangekyō Sharingan",
+        icon: require("../assets/img/shisui_mangeko.png"),
+      },
+    ],
+    nature_Transformations: [
+      {
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
+    ],
+  },
+
+  {
+    name: "Shikamaru",
+    id: "25",
+    Village: "Hidden Leef",
+    description: "The Strategist",
+    color: "#4f6157",
+    Village_Icon: require("../assets/img/leef_village_logo.png"),
+    Afiliation: "Team Azuma",
+    Afiliation_Icon: require("../assets/img/tean.png"),
+    Ninja_Level: "Jounin",
+    Gender: "Male",
+    clan: "Nara",
+    clan_Icon: require("../assets/img/Nara_Symbol.png"),
+    img: require("../assets/img/shikamaru.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "Sharingan",
+        icon: require("../assets/img/sharinga.png"),
+      },
+      {
+        id: "2",
+        name: "Mangekyō Sharingan",
+        icon: require("../assets/img/shisui_mangeko.png"),
+      },
+    ],
+    nature_Transformations: [
+      {
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
+    ],
+  },
+
+  {
+    name: "Gaara",
+    id: "26",
+    Village: "Hidden Sand",
+    description: "Sand Coffin",
+    color: "#a58a70",
+    Village_Icon: require("../assets/img/sand_village_logo.png"),
+    Afiliation: "Unknown",
+    Afiliation_Icon: require("../assets/img/tean.png"),
+    Ninja_Level: "Kage",
+    Ninja_Level_Icon: require("../assets/img/kazekage.png"),
+    Gender: "Male",
+    clan: "",
+    clan_Icon: require("../assets/img/unknown.png"),
+    img: require("../assets/img/gaara.png"),
+    Kekkei_Genkais: [
+      {
+        id: "1",
+        name: "Sharingan",
+        icon: require("../assets/img/sharinga.png"),
+      },
+      {
+        id: "2",
+        name: "Mangekyō Sharingan",
+        icon: require("../assets/img/shisui_mangeko.png"),
+      },
+    ],
+    nature_Transformations: [
+      {
+        id: "1",
+        name: "Fire Release",
+        icon: require("../assets/img/fire.png"),
+      },
+      {
+        id: "2",
+        name: "Ligthing Release",
+        icon: require("../assets/img/lightning.png"),
+      },
+      {
+        id: "3",
+        name: "Wind Release",
+        icon: require("../assets/img/wind.png"),
+      },
+      {
+        id: "4",
+        name: "Yang Release",
+        icon: require("../assets/img/yang.png"),
+      },
+    ],
+  },
 
   
 ];

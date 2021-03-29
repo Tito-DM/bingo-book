@@ -214,7 +214,7 @@ const Rating = ({ navigation }) => {
                   </View>
                   <View style={{ flex: 1 }}>
                     <TouchableOpacity>
-                      <MaterialIcons name="edit" size={20} color="#1e88e5" />
+                      <Text style={{color:"#1e88e5"}}>Edit</Text>
                     </TouchableOpacity>
                   </View>
                   <View style={{ flex: 1 }}>

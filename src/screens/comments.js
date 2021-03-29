@@ -47,7 +47,7 @@ const Comment = ({ navigation }) => {
         <View style={{marginTop: 10,}}>
           <Avatar
             rounded
-            size="medium"
+            size="small"
             source={{
               uri: "https://images4.alphacoders.com/944/944476.png",
             }}
